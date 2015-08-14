@@ -124,7 +124,6 @@ map lg : DoxLic<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimrc_author='king'
 let g:vimrc_email='kingmilian@gmail.com'
-let g:vimrc_homepage='kingmilian@gmail.com'
 map <F4> :AuthorInfoDetect<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
