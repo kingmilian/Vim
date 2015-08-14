@@ -1,0 +1,4 @@
+--c-kinds=+cdefglmnstuvx
+--fields=+ialS
+--extra=+q
+-f .tags

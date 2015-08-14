@@ -1,0 +1,16 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+[user]
+	name = Kingmilian
+	email = kingmilian@gmail.com
+[alias]
+	co = checkout
+	ci = commit -a
+	di = diff
+	st = status -s
+	br = branch
+	slog = log --pretty=oneline --graph
+	vlog = log --name-status -1
