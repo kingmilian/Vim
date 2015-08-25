@@ -92,6 +92,10 @@ svn() {
 		shift
 		svn_status "$@"
 		;;
+    pa)
+        shift
+        env svn diff "$*"
+        ;;
 	*)
 		env svn "$@"
 		;;
