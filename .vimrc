@@ -38,6 +38,7 @@ Plugin 'grep.vim'
 Plugin 'The-NERD-Commenter'
 Plugin 'winmanager'
 Plugin 'vcscommand.vim'
+Plugin 'kingmilian/SyntaxHighlight'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -116,15 +117,15 @@ let g:DoxygenToolkit_paramTag_pre = "@param \t"
 let g:DoxygenToolkit_returnTag = "@return\t =0  success"
 let g:DoxygenToolkit_briefTag_funcName = "yes"
 let g:DoxygenToolkit_maxFunctionProtoLines = 30
-map fg : Dox<cr>
-map lg : DoxLic<cr>
+nmap fg : Dox<cr>
+"nmap lg : DoxLic<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AuthorInfo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimrc_author='king'
 let g:vimrc_email='kingmilian@gmail.com'
-map <F4> :AuthorInfoDetect<cr>
+nmap <F4> :AuthorInfoDetect<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -145,28 +146,20 @@ highlight PmenuSbar ctermbg=4
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " grep
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <F3> :Rgrep<CR>
+nmap <silent> <F3> :Rgrep<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The-NERD-Commenter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","
-map <silent> jj ,c<space>
-map <silent> jk ,cm
+map <silent> cc ,c<space>
+map <silent> cm ,cm
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vcscommand
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map ll :VCSLog<CR>
-map ff :VCSDiff<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" key mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap 1 1gt
-nmap 2 2gt
-nmap 3 3gt
-nmap 4 4gt
+nmap <S-L> :VCSLog<CR>
+nmap <S-D> :VCSDiff<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " astyle
@@ -194,7 +187,7 @@ func CodeFormat()
     exec lineNum
 endfunc
 "映射代码美化函数到Shift+f快捷键
-map <S-F> <Esc>:call CodeFormat()<CR>
+nmap <S-F> <Esc>:call CodeFormat()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cscope
@@ -226,14 +219,31 @@ else
 endif
 
 " Cscope mappings
-nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-nnoremap o :cs find f 
+nmap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap o :cs find f 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" key mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap 1 1gt
+nmap 2 2gt
+nmap 3 3gt
+nmap 4 4gt
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" highlight
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi TabLineSel term=bold cterm=bold ctermfg=9 ctermbg=4
 
